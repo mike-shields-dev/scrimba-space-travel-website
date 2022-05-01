@@ -1,11 +1,4 @@
 /* -------------------------------- */
-/* Custom Properties */
-/* -------------------------------- */
-:root {
-    --gap: 2rem;
-}
-
-/* -------------------------------- */
 /* Reset */
 /* -------------------------------- */
 
@@ -99,9 +92,4 @@ select {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap; /* added line */
     border: 0;
-}
-
-.box {
-    background-color: lightblue;
-    padding: 3rem;
 }
