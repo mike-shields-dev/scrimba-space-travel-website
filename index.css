@@ -111,5 +111,3 @@ select {
 .text-dark { color: hsl( var(--clr-dark) ); }
 .text-accent { color: hsl( var(--clr-light) ); }
 .text-white { color: hsl( var(--clr-white) ); }
-
-.bg-accent-transparent { background-color: hsla( var(--clr-light) / .2 ); }
