@@ -78,6 +78,10 @@ select {
     gap: var(--gap, 1rem);
 }
 
+.flex-item {
+    flex: 1;
+}
+
 .grid {
     display: grid;
     gap: var(--gap, 1rem);
@@ -111,3 +115,7 @@ select {
 .text-dark { color: hsl( var(--clr-dark) ); }
 .text-accent { color: hsl( var(--clr-light) ); }
 .text-white { color: hsl( var(--clr-white) ); }
+
+/* Typography */
+
+.uppercase { text-transform: uppercase; }
