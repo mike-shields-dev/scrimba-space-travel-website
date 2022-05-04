@@ -1,13 +1,14 @@
-/* -------------------------------- */
-/* Custom Properties */
-/* -------------------------------- */
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
 :root {
-    /* Colors */
+    /* colors */
     --clr-dark: 230 35% 7%;
     --clr-light: 231 77% 90%;
     --clr-white: 0 0% 100%;
-
-    /* Fonts */
+    
+    /* font-sizes */
     --fs-900: 9.375rem;
     --fs-800: 6.25rem;
     --fs-700: 3.5rem;
@@ -16,26 +17,25 @@
     --fs-400: 1.125rem;
     --fs-300: 1rem;
     --fs-200: 0.875rem;
-
-    /* Font Families */
+    
+    /* font-families */
     --ff-serif: "Bellefair", serif;
     --ff-sans-cond: "Barlow Condensed", sans-serif;
     --ff-sans-normal: "Barlow", sans-serif;
 }
-/* -------------------------------- */
-/* Reset */
-/* -------------------------------- */
 
-/* See link below for an example of a good CSS reset */
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
 /* https://piccalil.li/blog/a-modern-css-reset/ */
 
-/* Box Sizing */
-*, 
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 /* Reset margins */
@@ -45,15 +45,13 @@ h2,
 h3,
 h4,
 h5,
-h6,
 p,
 figure,
 picture {
-    margin: 0;
+    margin: 0; 
 }
 
-/* Reset font-weight */
-h1, 
+h1,
 h2,
 h3,
 h4,
@@ -63,7 +61,7 @@ p {
     font-weight: 400;
 }
 
-/* Set up the body */
+/* set up the body */
 body {
     font-family: var(--ff-sans-normal);
     font-size: var(--fs-400);
@@ -73,44 +71,43 @@ body {
     min-height: 100vh;
 }
 
-/* Make images easier to work with */
-img, 
-picture {
+/* make images easier to work with */
+img,
+picutre {
     max-width: 100%;
     display: block;
 }
 
-/* Make forms easier to work with */
-input, 
-button, 
+/* make form elements easier to work with */
+input,
+button,
 textarea,
 select {
     font: inherit;
 }
 
-/* Remove animation for people who disable them */
-@media(prefers-reduced-motion: reduce) {
-    *,
-    *:before, 
-    *:after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-/* -------------------------------- */
-/* Utility Classes */
-/* -------------------------------- */
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
 
 .flex {
     display: flex;
     gap: var(--gap, 1rem);
-}
-
-.flex-item {
-    flex: 1;
 }
 
 .grid {
@@ -118,38 +115,40 @@ select {
     gap: var(--gap, 1rem);
 }
 
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1rem);
+    outline: 1px solid red;
+}
+
 .container {
-    padding-inline: 2em; /* the left and right padding */
-    margin-inline: auto; /* the left and right margins */
+    padding-inline: 2em;
+    margin-inline: auto;
     max-width: 80rem;
 }
 
-/* screen-reader-only */
-.sr-only { 
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap; /* added line */
-    border: 0;
+.sr-only {
+  position: absolute; 
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px; 
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
 }
 
-/* Colors */
+/* colors */
 
-.bg-dark { background-color: hsl( var(--clr-dark) ); }
-.bg-accent { background-color: hsl( var(--clr-light) ); }
-.bg-white { background-color: hsl( var(--clr-white) ); }
+.bg-dark { background-color: hsl( var(--clr-dark) );}
+.bg-accent { background-color: hsl( var(--clr-light) );}
+.bg-white { background-color: hsl( var(--clr-white) );}
 
-.text-dark { color: hsl( var(--clr-dark) ); }
-.text-accent { color: hsl( var(--clr-light) ); }
-.text-white { color: hsl( var(--clr-white) ); }
+.text-dark { color: hsl( var(--clr-dark) );}
+.text-accent { color: hsl( var(--clr-light) );}
+.text-white { color: hsl( var(--clr-white) );}
 
-/* Typography */
-
-.uppercase { text-transform: uppercase; }
+/* typography */
 
 .ff-serif { font-family: var(--ff-serif); } 
 .ff-sans-cond { font-family: var(--ff-sans-cond); } 
@@ -170,7 +169,6 @@ select {
 .fs-300 { font-size: var(--fs-300); }
 .fs-200 { font-size: var(--fs-200); }
 
-
 .fs-900,
 .fs-800,
 .fs-700,
@@ -182,11 +180,11 @@ select {
     font-family: var(--ff-sans-cond);
     font-size: var(--fs-500);
     text-transform: uppercase;
-    letter-spacing: 0.125em;
+    letter-spacing: 4.72px; 
 }
 
 .numbered-title span {
     margin-right: .5em;
     font-weight: 700;
-    color: hsl( var(--clr-white) / 0.25 );
+    color: hsl( var(--clr-white) / .25);
 }
